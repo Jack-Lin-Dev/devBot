@@ -6,6 +6,7 @@ const UserAgent = require("user-agents");
 const { randomInt } = require("crypto");
 const { WebClient } = require("@slack/web-api");
 const readline = require('readline');
+require('dotenv').config();
 // const chalk = require("chalk");
 let chalk;
 
@@ -395,7 +396,7 @@ async function CheckHumanVerificationPresent(page) {
 
 const getProxy = async () => {
   try {
-    const proxies = await fs.readFile("100Proxy(2).txt", 'utf-8');
+    const proxies = await fs.readFile("proxy_2.txt", 'utf-8');
     const proxyList = proxies
       .split('\n')
       .map(proxy => proxy.trim())
